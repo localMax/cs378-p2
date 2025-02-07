@@ -1,0 +1,65 @@
+.menuItem {
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.itemImage {
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+}
+
+.itemImage img{
+    width: 25vw;
+    height: 25vw;
+    border-radius: 20%;
+    object-fit: cover;
+}
+
+.menuDescription {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 200%;
+    justify-content: space-between;
+}
+
+.itemTitle{
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.itemDescription{
+    font-size: 1.25rem;
+    color: gray;
+}
+
+.costRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.costRow p {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.costRow button {
+    color: black;
+    border: none;
+    padding: 0.25rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.1rem;
+    border-radius: 40%;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
+  }
+
+  .costRow button:hover{
+    /* Shadow on hover for effect */
+    box-shadow: 0.5rem 0.5rem 0.7rem rgba(0, 0, 0, 0.5);
+  }
