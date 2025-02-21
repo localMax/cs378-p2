@@ -1,7 +1,7 @@
 import React from 'react';
 import "./MenuHeader.css";
 
-const MenuItem = ({logo, description}) => {
+const MenuHeader = ({logo, description}) => {
   return (
     <div className>
       <div class="title">
@@ -14,4 +14,4 @@ const MenuItem = ({logo, description}) => {
   );
 };
 
-export default MenuItem;
+export default MenuHeader;

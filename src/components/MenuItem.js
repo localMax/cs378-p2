@@ -1,7 +1,7 @@
 import React from 'react';
 import "./MenuItem.css";
 
-const MenuItem = ({ title, imageName, price, description }) => {
+const MenuItem = ({ title, imageName, price, description, addToCart }) => {
   return (
     <div className="menuItem">
       <div className="itemImage">
@@ -12,7 +12,7 @@ const MenuItem = ({ title, imageName, price, description }) => {
         <p className="itemDescription">{description}</p>
         <div className="costRow">
           <p className="itemCost">${price.toFixed(2)}</p>
-          <button>Add</button>
+          <button onClick={addToCart}>Add</button>
         </div>
       </div>
     </div>

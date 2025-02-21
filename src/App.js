@@ -1,4 +1,5 @@
 import './App.css';
+import React, { useState } from 'react';
 import MenuItem from './components/MenuItem';
 import MenuHeader from './components/MenuHeader';
 
@@ -83,28 +84,38 @@ const MenuHeaderInfo = {
   description: "we hook'em, you eat'em",
 }
 
-function App() {
+
+const App = () => {
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (item) => {
+    setCart([...cart, item]);
+  };
+
+  const getTotalCost = () => {
+    return cart.reduce((total, item) => total + item.price, 0).toFixed(2);
+  };
+
   return (
     <div>
-      <div className="menuheader">
-        <MenuHeader
-          logo = {MenuHeaderInfo.logo}
-          description = {MenuHeaderInfo.description}
-        />
-      </div>
       <div className="menu">
-      {menuItems.map(item => (
-      <MenuItem 
-        key={item.id} 
-        title={item.title} 
-        imageName={`images/${item.imageName}`} 
-        price={item.price} 
-        description={item.description} 
-      />
-      ))}
+        {menuItems.map((item) => (
+          <MenuItem 
+            key={item.id} 
+            title={item.title} 
+            imageName={`images/${item.imageName}`} 
+            price={item.price} 
+            description={item.description} 
+            addToCart={() => addToCart(item)}
+          />
+        ))}
+      </div>
+      <div className="cart">
+        <h2>Cart</h2>
+        <p>Total: ${getTotalCost()}</p>
       </div>
     </div>
   );
-}
+};
 
 export default App;
